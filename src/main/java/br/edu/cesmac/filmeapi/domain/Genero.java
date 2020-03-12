@@ -17,6 +17,7 @@ public class Genero {
 	}
 
 	public Genero(Long idGenero, String nome, String descricao) {
+		
 		this.IdGenero = idGenero;
 		this.Nome = nome;
 		this.Descricao = descricao;
