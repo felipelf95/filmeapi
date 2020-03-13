@@ -16,44 +16,43 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.edu.cesmac.filmeapi.domain.Ator;
-import br.edu.cesmac.filmeapi.domain.Genero;
+import br.edu.cesmac.filmeapi.domain.Filme;
 import br.edu.cesmac.filmeapi.repository.AtoresRepository;
-import br.edu.cesmac.filmeapi.repository.GenerosRepository;
+import br.edu.cesmac.filmeapi.repository.FilmesRepository;
 
 @RestController
-@RequestMapping("/atores")
+@RequestMapping("/filmes")
+public class FilmesResources {
 
-public class AtoresResources {
 	@Autowired
-	private AtoresRepository atoresRepository;
+	private FilmesRepository filmesRepository;
 
 	@GetMapping
-	public List<Ator> Listar() {
-		return atoresRepository.findAll();
+	public List<Filme> Listar() {
+		return filmesRepository.findAll();
 	}
 	
 	@PostMapping
-	public ResponseEntity <Void> Salvar (@RequestBody Ator ator) {
-		atoresRepository.save(ator);
+	public ResponseEntity <Void> Salvar (@RequestBody Filme filme) {
+		filmesRepository.save(filme);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-				.buildAndExpand(ator.getIdAtor()).toUri();
+				.buildAndExpand(filme.getIdFIlme()).toUri();
 				return ResponseEntity.created(uri).build();
 	}
 	
 	@PutMapping
-	public void Atualizar (@RequestBody Ator ator) {
-		atoresRepository.save(ator);
+	public void Atualizar (@RequestBody Filme filme) {
+		filmesRepository.save(filme);
 	}
 	
 	@DeleteMapping
-	public void Deletar (@RequestBody Ator ator) {
-		atoresRepository.delete(ator);
+	public void Deletar (@RequestBody Filme filme) {
+		filmesRepository.delete(filme);
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Ator> BuscaPorId(@PathVariable("id") Long idAtor){
-		return atoresRepository.findById(idAtor).map(ator -> 
-		ResponseEntity.ok(ator)).orElse(ResponseEntity.notFound().build());
+	public ResponseEntity<Filme> BuscaPorId(@PathVariable("id") Long idFilme){
+		return filmesRepository.findById(idFilme).map(filme -> 
+		ResponseEntity.ok(filme)).orElse(ResponseEntity.notFound().build());
 	}
-	
 }
