@@ -35,8 +35,8 @@ public class Filme {
 		return IdFilme;
 	}
 
-	public void setTitulo(long IdFilme) {
-		IdFilme = IdFilme;
+	public void setIdFilme(long idFilme) {
+		IdFilme = idFilme;
 	}
 	
 	public String getTitulo() {
