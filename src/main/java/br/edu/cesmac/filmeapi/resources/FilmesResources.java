@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import br.edu.cesmac.filmeapi.domain.Ator;
+
 import br.edu.cesmac.filmeapi.domain.Filme;
-import br.edu.cesmac.filmeapi.repository.AtoresRepository;
+
 import br.edu.cesmac.filmeapi.repository.FilmesRepository;
 
 @RestController
