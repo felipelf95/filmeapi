@@ -21,11 +21,11 @@ public class Ator {
 	
 	public Ator(Long idAtor, String nome, String dataNascimento, String sexo, String biografia) {
 		
-		IdAtor = idAtor;
-		Nome = nome;
-		DataNascimento = dataNascimento;
-		Sexo = sexo;
-		Biografia = biografia;
+		this.IdAtor = idAtor;
+		this.Nome = nome;
+		this.DataNascimento = dataNascimento;
+		this.Sexo = sexo;
+		this.Biografia = biografia;
 	}
 
 
